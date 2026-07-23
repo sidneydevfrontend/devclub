@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Tags -->
+  <title>DevClub | Programação e Inteligência Artificial</title>
+  <meta name="description"
+    content="Aprenda Programação e Inteligência Artificial com especialistas do mercado. Formação completa baseada em projetos práticos, IA integrada e suporte de carreira.">
+  <meta name="keywords"
+    content="DevClub, escola online de programação, inteligência artificial, aprender programação, python, javascript, react, machine learning, transição de carreira tech">
+  <meta name="author" content="DevClub">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DevClub | Formação Elite em Programação e IA">
+  <meta property="og:description"
+    content="Aprenda do zero ao avançado com uma metodologia de alto nível e consiga sua vaga no mercado de tecnologia.">
+  <meta property="og:image" content="./assets/hero-dashboard.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23FF7A00%22/><text y=%2270%22 x=%2220%22 font-family=%22monospace%22 font-size=%2260%22 font-weight=%22800%22 fill=%22white%22>&gt;</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+
+
+
+  <!-- Animação GSAP (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Background Particles Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="nav-logo">
+        <img src="./assets/logo-devclub.png" alt="DevClub Logo" class="logo-img">
+      </a>
+
+      <nav aria-label="Navegação Principal">
+        <ul class="nav-menu" id="nav-menu-list">
+          <li><a href="#cursos" class="nav-link">Cursos</a></li>
+          <li><a href="#ia" class="nav-link">IA</a></li>
+          <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
+          <li><a href="#professores" class="nav-link">Professores</a></li>
+
+          <!-- Botões no menu mobile -->
+          <div class="nav-actions-mobile">
+            <a href="#entrar" class="btn-login" id="btn-login-mobile">
+              <i data-lucide="log-in"></i> Entrar
+            </a>
+            <a href="#cta-final" class="btn btn-primary" id="btn-start-mobile">
+              Começar Agora <i data-lucide="sparkles"></i>
+            </a>
+          </div>
+
+        </ul>
+      </nav>
+
+      <!-- Ações Desktop -->
+      <div class="nav-actions desktop-only">
+        <a href="#entrar" class="btn-login" id="btn-login-header"><i data-lucide="log-in"></i> Entrar</a>
+        <a href="#cta-final" class="btn btn-primary" id="btn-start-header">Começar Agora <i
+            data-lucide="sparkles"></i></a>
+      </div>
+
+      <!-- Botão Hambúrguer -->
+      <button class="menu-toggle" id="menu-mobile-toggle" aria-label="Abrir menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Overlay do menu -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <main>
+
+    <!-- 1 HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="video-bg-container">
+        <video autoplay loop muted playsinline class="video-bg">
+          <source src="./assets/robot-code.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-subtitle">A Nova Geração da Educação em Tecnologia</div>
+          <h1 class="hero-title">
+            Aprenda <span class="text-orange">Programação</span> e <span class="text-orange">IA</span> com quem cria
+            <span class="text-orange">Projetos Reais</span>.
+          </h1>
+          <p class="hero-desc">
+            Aprenda do zero ao avançado através de uma metodologia prática baseada em projetos, desafios de código e
+            acompanhamento individual de especialistas.
+          </p>
+          <div class="hero-ctas">
+            <a href="#cta-final" class="btn btn-primary" id="hero-btn-primary">Quero Fazer Parte <i
+                data-lucide="arrow-right"></i></a>
+            <a href="#ia" class="btn btn-secondary" id="hero-btn-secondary">
+              <i data-lucide="play-circle"></i> Assistir Demonstração
+            </a>
+          </div>
+
+          <!-- Avatars group as in reference image -->
+          <div class="hero-avatars">
+            <div class="avatar-group">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                alt="Aluno 1" class="avatar-img">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                alt="Aluno 2" class="avatar-img">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                alt="Aluno 3" class="avatar-img">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+                alt="Aluno 4" class="avatar-img">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
+                alt="Aluno 5" class="avatar-img">
+            </div>
+            <div class="avatar-text">
+              <span class="highlight"><span class="text-mint">+25 mil alunos</span> já passaram por aqui</span>
+              <span class="subtext">Alunos nas maiores empresas do Brasil e do mundo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mockup-wrapper">
+            <img src="./assets/hero-dashboard.png" alt="Notebook aberto com plataforma DevClub" class="laptop-mockup"
+              loading="eager">
+
+            <!-- Floating cards representing visual stats -->
+            <div class="floating-card fc-1">
+              <div class="icon"><i data-lucide="users"></i></div>
+              <div>
+                <h4>+25.000</h4>
+                <p>Alunos ativos</p>
+              </div>
+            </div>
+
+            <div class="floating-card fc-2 mint">
+              <div class="icon"><i data-lucide="play"></i></div>
+              <div>
+                <h4>+180 aulas</h4>
+                <p>Conteúdo atualizado</p>
+              </div>
+            </div>
+
+            <div class="floating-card fc-3">
+              <div class="icon"><i data-lucide="cpu"></i></div>
+              <div>
+                <h4>IA Integrada</h4>
+                <p>Suporte 24/7</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 LOGOS BAND (INFINITE SCROLL) -->
+    <section class="logos-section" aria-label="Empresas parceiras">
+      <div class="logos-title">Empresas onde nossos alunos trabalham</div>
+      <div class="slider-container">
+        <div class="logos-track" id="logos-scroller">
+          <div class="logo-item"><span>Google</span></div>
+          <div class="logo-item"><span>Microsoft</span></div>
+          <div class="logo-item"><span>Amazon</span></div>
+          <div class="logo-item"><span>Meta</span></div>
+          <div class="logo-item"><span>Nubank</span></div>
+          <div class="logo-item"><span>iFood</span></div>
+          <div class="logo-item"><span>Santander</span></div>
+          <div class="logo-item"><span>IBM</span></div>
+          <div class="logo-item"><span>Oracle</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 SEÇÃO BENEFÍCIOS -->
+    <section class="section-padding" id="cursos">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Competências</span>
+          <h2 class="section-title">Você vai se tornar um <span class="text-orange">Desenvolvedor de Alto Nível</span>
+          </h2>
+          <p class="section-desc">Nosso currículo é estruturado para atender às demandas de nível internacional do
+            mercado moderno.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- Card 1: Front-end -->
+          <article class="glass-card benefit-card" id="benefit-front">
+            <div class="benefit-card-header">
+              <div class="benefit-icon"><i data-lucide="layout"></i></div>
+              <h3>Programação Front-end</h3>
+            </div>
+            <p>Construa interfaces de usuário incríveis, rápidas e responsivas utilizando as tecnologias mais modernas
+              do mercado de trabalho.</p>
+            <div class="tag-cloud">
+              <span class="tag-item">JavaScript</span>
+              <span class="tag-item">React</span>
+              <span class="tag-item">TailwindCSS</span>
+              <span class="tag-item">Git & GitHub</span>
+              <span class="tag-item">APIs REST</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Back-end -->
+          <article class="glass-card benefit-card secondary-glow" id="benefit-back">
+            <div class="benefit-card-header">
+              <div class="benefit-icon"><i data-lucide="server"></i></div>
+              <h3>Back-end & Infra</h3>
+            </div>
+            <p>Desenvolva arquiteturas escaláveis, gerencie bancos de dados robustos e implante aplicações em escala
+              global.</p>
+            <div class="tag-cloud">
+              <span class="tag-item">Node.js</span>
+              <span class="tag-item">Python</span>
+              <span class="tag-item">Banco de Dados</span>
+              <span class="tag-item">Cloud Services</span>
+              <span class="tag-item">Docker</span>
+            </div>
+          </article>
+
+          <!-- Card 3: IA -->
+          <article class="glass-card benefit-card" id="benefit-ai">
+            <div class="benefit-card-header">
+              <div class="benefit-icon"><i data-lucide="brain"></i></div>
+              <h3>Inteligência Artificial</h3>
+            </div>
+            <p>Aprenda a aplicar modelos inteligentes de IA no desenvolvimento de software e otimize seu fluxo de
+              engenharia de prompt.</p>
+            <div class="tag-cloud">
+              <span class="tag-item">Machine Learning</span>
+              <span class="tag-item">Prompt Engineering</span>
+              <span class="tag-item">Automações de IA</span>
+              <span class="tag-item">Modelos LLM</span>
+              <span class="tag-item">Integrações de API</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 IA SECTION -->
+    <section class="section-padding" id="ia">
+      <div class="container ia-grid">
+        <div class="ia-content">
+          <span class="section-tag">DevClub AI</span>
+          <h2 class="section-title">A primeira plataforma que une <span class="text-orange">Programação + Inteligência
+              Artificial</span></h2>
+          <p class="section-desc" style="margin-left: 0;">
+            Maximize sua produtividade e resolva problemas técnicos em tempo recorde com o nosso copiloto inteligente
+            integrado à plataforma de ensino.
+          </p>
+          <ul class="ia-features">
+            <li><i data-lucide="check-circle-2"></i> Assistente IA 24/7</li>
+            <li><i data-lucide="check-circle-2"></i> Correção automática</li>
+            <li><i data-lucide="check-circle-2"></i> Explicação de código</li>
+            <li><i data-lucide="check-circle-2"></i> Criação de projetos</li>
+            <li><i data-lucide="check-circle-2"></i> Sugestões inteligentes</li>
+            <li><i data-lucide="check-circle-2"></i> Chat integrado</li>
+          </ul>
+          <a href="#cta-final" class="btn btn-primary" id="btn-know-ai">Conhecer a IA</a>
+        </div>
+
+        <div class="ia-visual">
+          <div class="ia-img-wrapper">
+            <img src="./assets/ai-assistant.png" alt="Interface futurista da Inteligência Artificial DevClub"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 METODOLOGIA -->
+    <section class="section-padding" id="metodologia">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">A Metodologia</span>
+          <h2 class="section-title">O Caminho para se <span class="text-orange">Tornar Referência</span></h2>
+          <p class="section-desc">Uma jornada de aprendizado pensada para te levar do absoluto zero à sua contratação no
+            mercado internacional.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="step-number">1</div>
+            <h3>Aprenda</h3>
+            <p>Assista a aulas práticas e objetivas com programadores seniors ativos no mercado.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">2</div>
+            <h3>Pratique</h3>
+            <p>Resolva desafios práticos de código semanalmente para consolidar os conceitos.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">3</div>
+            <h3>Construa</h3>
+            <p>Desenvolva projetos complexos similares aos sistemas de grandes empresas.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">4</div>
+            <h3>Publique</h3>
+            <p>Crie um portfólio robusto no GitHub para atrair a atenção dos recrutadores.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">5</div>
+            <h3>Sua Vaga</h3>
+            <p>Conecte-se com empresas parceiras e receba acompanhamento de carreira individual.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 PLATAFORMA -->
+    <section class="section-padding" id="plataforma">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Nossa Plataforma</span>
+          <h2 class="section-title">Uma Experiência de <span class="text-orange">Ensino Futurista</span></h2>
+          <p class="section-desc">Acesso a uma plataforma completa, gamificada e interativa para acelerar o seu
+            progresso.</p>
+        </div>
+
+        <div class="platform-grid">
+          <!-- Card 1 -->
+          <div class="glass-card platform-card">
+            <i data-lucide="layout-grid" class="icon-lg"></i>
+            <h3>Dashboard Inteligente</h3>
+            <p>Acompanhe seu rendimento acadêmico através de análises de progresso em tempo real.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-card platform-card alt">
+            <i data-lucide="gamepad-2" class="icon-lg"></i>
+            <h3>Gamificação Completa</h3>
+            <p>Acumule pontos (XP) resolvendo desafios e conquiste novas patentes na plataforma.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-card platform-card">
+            <i data-lucide="trophy" class="icon-lg"></i>
+            <h3>Ranking da Comunidade</h3>
+            <p>Dispute posições semanais com outros programadores no topo do leaderboard nacional.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="glass-card platform-card alt">
+            <i data-lucide="award" class="icon-lg"></i>
+            <h3>Certificados Oficiais</h3>
+            <p>Emissão de certificados verificados de forma criptografada para anexar ao seu LinkedIn.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="glass-card platform-card">
+            <i data-lucide="messages-square" class="icon-lg"></i>
+            <h3>Comunidade Ativa</h3>
+            <p>Networking diário no chat com milhares de alunos e professores experientes.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="glass-card platform-card alt">
+            <i data-lucide="code-2" class="icon-lg"></i>
+            <h3>Desafios e Projetos</h3>
+            <p>Acesse repositórios exclusivos com mais de 50 desafios de código reais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 PROJETOS REAIS -->
+    <section class="section-padding" id="projetos">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Showcase</span>
+          <h2 class="section-title">Desenvolva <span class="text-orange">Sistemas Modernos</span></h2>
+          <p class="section-desc">Seu portfólio conterá projetos robustos com as mesmas tecnologias utilizadas por
+            gigantes globais.</p>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Project 1 -->
+          <article class="glass-card project-card">
+            <div class="project-img-wrapper">
+              <div class="project-placeholder">
+                <i data-lucide="tv-2"></i>
+                <span>Netflix Clone</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Netflix Clone UI</h3>
+                <p class="project-desc">Desenvolvimento da interface responsiva do streaming de filmes, consumindo a API
+                  oficial TMDB.</p>
+              </div>
+              <div class="project-footer">
+                <span class="project-tech">React & Tailwind</span>
+                <a href="#cta-final" class="project-link">Ver Detalhes <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="glass-card project-card alt">
+            <div class="project-img-wrapper">
+              <div class="project-placeholder">
+                <i data-lucide="music-4"></i>
+                <span>Spotify Clone</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Spotify Web Player</h3>
+                <p class="project-desc">Recriação completa do player web, incluindo integração com a API de áudio e
+                  listas de reprodução.</p>
+              </div>
+              <div class="project-footer">
+                <span class="project-tech">React & Node.js</span>
+                <a href="#cta-final" class="project-link">Ver Detalhes <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="glass-card project-card">
+            <div class="project-img-wrapper">
+              <div class="project-placeholder">
+                <i data-lucide="message-square-code"></i>
+                <span>ChatGPT Clone</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">ChatGPT AI Assistant</h3>
+                <p class="project-desc">Interface com consumo dinâmico do modelo GPT da OpenAI para chat contextual e
+                  respostas em streaming.</p>
+              </div>
+              <div class="project-footer">
+                <span class="project-tech">Python & React</span>
+                <a href="#cta-final" class="project-link">Ver Detalhes <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="glass-card project-card alt">
+            <div class="project-img-wrapper">
+              <div class="project-placeholder">
+                <i data-lucide="line-chart"></i>
+                <span>Dashboard SaaS</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Dashboard SaaS Analytics</h3>
+                <p class="project-desc">Métricas avançadas e gráficos interativos para controle financeiro e retenção de
+                  assinaturas.</p>
+              </div>
+              <div class="project-footer">
+                <span class="project-tech">Next.js & ChartJS</span>
+                <a href="#cta-final" class="project-link">Ver Detalhes <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="glass-card project-card">
+            <div class="project-img-wrapper">
+              <div class="project-placeholder">
+                <i data-lucide="wallet"></i>
+                <span>Sistema Financeiro</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">Controle Financeiro ERP</h3>
+                <p class="project-desc">API e interface integradas para controle de fluxo de caixa, pagamentos e
+                  relatórios em PDF.</p>
+              </div>
+              <div class="project-footer">
+                <span class="project-tech">Node.js & Postgres</span>
+                <a href="#cta-final" class="project-link">Ver Detalhes <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="glass-card project-card alt">
+            <div class="project-img-wrapper">
+              <div class="project-placeholder">
+                <i data-lucide="shopping-bag"></i>
+                <span>E-commerce</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">E-commerce Marketplace</h3>
+                <p class="project-desc">Loja virtual com carrinho dinâmico, pagamentos integrados com Stripe/Pix e
+                  painel administrativo.</p>
+              </div>
+              <div class="project-footer">
+                <span class="project-tech">Node.js & MongoDB</span>
+                <a href="#cta-final" class="project-link">Ver Detalhes <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 PROFESSORES -->
+    <section class="section-padding" id="professores">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Nossos Mentores</span>
+          <h2 class="section-title">Aprenda com <span class="text-orange">Profissionais Referência</span></h2>
+          <p class="section-desc">Estude com quem lida diariamente com sistemas de grande porte no mercado de tecnologia
+            real.</p>
+        </div>
+
+        <div class="professors-grid">
+          <!-- Professor 1 -->
+          <div class="glass-card prof-card" id="prof-1">
+            <div class="prof-avatar">
+              <i data-lucide="user-round"></i>
+            </div>
+            <h3 class="prof-name">Rodolfo Mori</h3>
+            <span class="prof-specialty">Founder & Head of Tech</span>
+            <p class="prof-bio">Ex-Google Partner e ex-líder de desenvolvimento com mais de 10 anos de experiência em
+              Web Stack moderna.</p>
+            <div class="prof-companies">Empresas onde trabalhou: Google • Nubank • Startups EUA</div>
+          </div>
+
+          <!-- Professor 2 -->
+          <div class="glass-card prof-card alt" id="prof-2">
+            <div class="prof-avatar">
+              <i data-lucide="user-round"></i>
+            </div>
+            <h3 class="prof-name">Camila Silva</h3>
+            <span class="prof-specialty">AI Research Engineer</span>
+            <p class="prof-bio">Doutora em Engenharia de Computação, especialista em machine learning e sistemas
+              avançados de automação.</p>
+            <div class="prof-companies">Empresas onde trabalhou: IBM Watson • Oracle • ITA Research</div>
+          </div>
+
+          <!-- Professor 3 -->
+          <div class="glass-card prof-card" id="prof-3">
+            <div class="prof-avatar">
+              <i data-lucide="user-round"></i>
+            </div>
+            <h3 class="prof-name">Gabriel Santos</h3>
+            <span class="prof-specialty">DevOps & Cloud Architect</span>
+            <p class="prof-bio">Especialista em escala global, microsserviços, Kubernetes, Docker e automação de CI/CD
+              pipelines.</p>
+            <div class="prof-companies">Empresas onde trabalhou: iFood • Mercado Livre • AWS Partner</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 ESTATÍSTICAS -->
+    <section class="section-padding" aria-label="Estatísticas gerais">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="glass-card stat-card">
+            <div class="stat-number text-orange">+25.000</div>
+            <div class="stat-label">Alunos Formados</div>
+          </div>
+
+          <div class="glass-card stat-card secondary-glow">
+            <div class="stat-number text-mint">+180</div>
+            <div class="stat-label">Aulas Gravadas</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-number text-orange">95%</div>
+            <div class="stat-label">Taxa de Conclusão</div>
+          </div>
+
+          <div class="glass-card stat-card secondary-glow">
+            <div class="stat-number text-mint">4.9★</div>
+            <div class="stat-label">Avaliação Média</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-number text-orange">+1M</div>
+            <div class="stat-label">Linhas de Código</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 DEPOIMENTOS -->
+    <section class="section-padding" id="resultados">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Histórias de Sucesso</span>
+          <h2 class="section-title"><span class="text-orange">Transformação</span> Real de Carreira</h2>
+          <p class="section-desc">Milhares de alunos que saíram do absoluto zero e conquistaram vagas nas maiores
+            empresas de tecnologia.</p>
+        </div>
+
+        <div class="testimonials-wrapper">
+          <div class="testimonials-track">
+            <!-- Testimonial 1 -->
+            <div class="glass-card testimonial-card">
+              <div class="stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <p class="test-text">"O DevClub mudou completamente minha trajetória. O suporte é incomparável e a
+                didática focada em projetos me preparou diretamente para as entrevistas."</p>
+              <div class="test-user">
+                <div class="user-img"><i data-lucide="user"></i></div>
+                <div class="user-info">
+                  <h4>Lucas Almeida</h4>
+                  <p>Software Engineer @ Nubank</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="glass-card testimonial-card secondary-glow">
+              <div class="stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <p class="test-text">"Eu achava que programar não era para mim, mas o acompanhamento dos professores e os
+                projetos práticos me ajudaram a garantir minha vaga na Google."</p>
+              <div class="test-user">
+                <div class="user-img"><i data-lucide="user"></i></div>
+                <div class="user-info">
+                  <h4>Mariana Souza</h4>
+                  <p>Frontend Developer @ Google</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="glass-card testimonial-card">
+              <div class="stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <p class="test-text">"A inteligência artificial do DevClub ajuda demais na hora de tirar dúvidas de código
+                no meio da noite. A melhor plataforma de ensino do país."</p>
+              <div class="test-user">
+                <div class="user-img"><i data-lucide="user"></i></div>
+                <div class="user-info">
+                  <h4>Felipe Silva</h4>
+                  <p>AI Engineer @ IBM Watson</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="glass-card testimonial-card secondary-glow">
+              <div class="stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <p class="test-text">"Construir clones de grandes plataformas como Spotify e Netflix me deu uma bagagem
+                fantástica para assumir desafios complexos no iFood."</p>
+              <div class="test-user">
+                <div class="user-img"><i data-lucide="user"></i></div>
+                <div class="user-info">
+                  <h4>Beatriz Santos</h4>
+                  <p>Full Stack Engineer @ iFood</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 CERTIFICADOS -->
+    <section class="section-padding" aria-label="Certificação">
+      <div class="container certificate-grid">
+        <div class="cert-content">
+          <span class="section-tag">Certificação Elite</span>
+          <h2 class="section-title">Certificado Verificado com <span class="text-orange">Reconhecimento Nacional</span>
+          </h2>
+          <p class="section-desc" style="margin-left: 0;">
+            Ao finalizar a formação do DevClub, você receberá um certificado digital com selo verificável, gerando
+            autoridade máxima para o seu perfil profissional.
+          </p>
+          <ul class="cert-badge-list">
+            <li><i data-lucide="shield-check"></i> Registro verificável via Blockchain</li>
+            <li><i data-lucide="linkedin"></i> Compartilhamento instantâneo no LinkedIn</li>
+            <li><i data-lucide="check"></i> Selo de Excelência de Qualidade de Ensino</li>
+          </ul>
+          <a href="#cta-final" class="btn btn-primary" id="btn-cert">Garantir Minha Vaga</a>
+        </div>
+
+        <div class="cert-visual">
+          <img src="./assets/verified-certificate.png" alt="Exemplo do certificado digital DevClub premium"
+            loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 MERCADO -->
+    <section class="section-padding market-section" id="mercado">
+      <div class="container market-grid">
+        <div class="market-content">
+          <span class="section-tag">O Mercado</span>
+          <h2 class="section-title">O mercado precisa de <span class="text-orange">Desenvolvedores</span> e
+            Especialistas em <span class="text-orange">IA</span></h2>
+          <p class="section-desc" style="margin-left: 0; margin-bottom: 24px;">
+            A escassez mundial de programadores qualificados e engenheiros de Inteligência Artificial impulsiona os
+            salários para patamares incríveis. Veja as faixas salariais médias de mercado:
+          </p>
+          <div class="hero-ctas">
+            <a href="#cta-final" class="btn btn-primary" id="market-cta-btn">Quero Entrar no Mercado</a>
+          </div>
+        </div>
+
+        <!-- Interactive Chart mockup -->
+        <div class="graph-container">
+          <h3 style="margin-bottom: 24px; font-size: 1.15rem; color: #FFFFFF;">Média Salarial Mensal (BRL)</h3>
+          <div class="bar-chart">
+
+            <!-- Bar 1 -->
+            <div class="bar-row" data-value="45">
+              <div class="bar-info">
+                <span class="bar-label">Desenvolvedor Front-end</span>
+                <span class="bar-value">R$ 6.500</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Bar 2 -->
+            <div class="bar-row alt" data-value="55">
+              <div class="bar-info">
+                <span class="bar-label">Desenvolvedor Back-end</span>
+                <span class="bar-value">R$ 7.800</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Bar 3 -->
+            <div class="bar-row" data-value="75">
+              <div class="bar-info">
+                <span class="bar-label">Desenvolvedor Full Stack</span>
+                <span class="bar-value">R$ 10.500</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Bar 4 -->
+            <div class="bar-row alt" data-value="65">
+              <div class="bar-info">
+                <span class="bar-label">Desenvolvedor Python</span>
+                <span class="bar-value">R$ 9.000</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Bar 5 -->
+            <div class="bar-row" data-value="95">
+              <div class="bar-info">
+                <span class="bar-label">Engenheiro de IA / ML</span>
+                <span class="bar-value">R$ 14.500</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Bar 6 -->
+            <div class="bar-row alt" data-value="85">
+              <div class="bar-info">
+                <span class="bar-label">Especialista Cloud (DevOps)</span>
+                <span class="bar-value">R$ 12.000</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 GARANTIA -->
+    <section class="section-padding" aria-label="Garantia">
+      <div class="container">
+        <div class="glass-card warranty-card" id="warranty-block">
+          <div class="warranty-badge">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <h3>7 Dias de Garantia Incondicional</h3>
+          <p>
+            Matricule-se hoje e explore todo o conteúdo do DevClub. Se você não gostar do suporte, das aulas ou da
+            comunidade, solicite reembolso integral em até 7 dias sem qualquer questionamento. Risco zero para você.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 FAQ ACCORDION -->
+    <section class="section-padding" id="faq">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Perguntas Frequentes</span>
+          <h2 class="section-title">Dúvidas <span class="text-orange">Frequentes</span></h2>
+          <p class="section-desc">Tem alguma dúvida? Encontre as respostas rápidas para as principais questões sobre a
+            formação DevClub.</p>
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ 1 -->
+          <div class="faq-item" id="faq-1">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
+              <span>Preciso de conhecimento prévio para iniciar?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-1">
+              Não. A metodologia do DevClub foi desenhada para te guiar desde o absoluto zero (lógica de programação)
+              até a construção de aplicações robustas de inteligência artificial e publicação de sistemas avançados.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item" id="faq-2">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
+              <span>Como funciona o suporte individual?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-2">
+              Você terá acesso diário a professores e monitores que podem revisar seu código e responder a dúvidas. Além
+              disso, a nossa plataforma conta com um assistente de inteligência artificial integrado disponível 24/7
+              para suporte em tempo real.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item" id="faq-3">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
+              <span>Por quanto tempo terei acesso à plataforma?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-3">
+              Ao assinar o DevClub, seu acesso será vitalício ou anual, dependendo do plano escolhido na matrícula.
+              Todos os planos dão direito a futuras atualizações e suporte permanente.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item" id="faq-4">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-4">
+              <span>O certificado é verificado?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-4">
+              Sim. Todos os nossos certificados contêm uma hash criptográfica e QR code para validação externa,
+              garantindo sua autenticidade para recrutadores de RH.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 CTA FINAL -->
+    <section class="section-padding cta-final" id="cta-final">
+      <div class="cta-glow"></div>
+      <div class="container">
+        <h2>Sua carreira em <span class="text-orange">Tecnologia</span> começa hoje.</h2>
+        <p>Aprenda programação e inteligência artificial de forma prática e domine as competências que as empresas
+          mundiais estão contratando.</p>
+        <a href="#inscrever" class="btn btn-primary btn-large" id="btn-enroll-now">Quero entrar para o DevClub</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 16 FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" id="footer-logo">
+            <img src="./assets/logo-devclub.png" alt="DevClub Logo" class="logo-img">
+          </a>
+          <p>A nova geração de educação em tecnologia. Formação baseada em projetos, acompanhamento individual e
+            inteligência artificial.</p>
+
+          <!-- Ícones sociais corrigidos -->
+          <div class="footer-socials">
+            <!-- Instagram -->
+            <a href="https://instagram.com/devclub" target="_blank" class="social-icon" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/company/devclub" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            <!-- Twitter / X -->
+            <a href="https://twitter.com/devclub" target="_blank" class="social-icon" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com/@devclub" target="_blank" class="social-icon" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 17 2 19.5 3.5 21 21 21 22.5 19.5 22 17 20 7 4 7 2.5 17z"></path>
+                <polygon points="10 15 15 12 10 9"></polygon>
+              </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/devclub" target="_blank" class="social-icon" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Explorar</h4>
+          <ul>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#ia">Inteligência Artificial</a></li>
+            <li><a href="#metodologia">Metodologia</a></li>
+            <li><a href="#projetos">Projetos Alunos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Plataforma</h4>
+          <ul>
+            <li><a href="#plataforma">Dashboard</a></li>
+            <li><a href="#plataforma">Leaderboard</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#faq">Perguntas FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>Email: suporte@devclub.com.br</li>
+            <li>WhatsApp: +55 (11) 99999-9999</li>
+            <li>Atendimento: Seg a Sex, 9h às 18h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DevClub Educação S.A. Todos os direitos reservados | Desenvolvimento: Sidney</p>
+        <div class="footer-bottom-links">
+          <a href="#politica-privacidade">Política de Privacidade</a>
+          <a href="#termos-uso">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+
+  <!-- Lucide Icons - Versão mais estável -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    // Inicializa Lucide com delay seguro
+    function initLucide() {
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initLucide);
+    window.addEventListener("load", () => {
+      setTimeout(initLucide, 600);
+      setTimeout(initLucide, 1200); // Segunda tentativa
+    });
+  </script>
+</body>
+
+</html>
